@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body style="list-style:none">
+
+  <!-- aqui comienza la zona de busqueda -->
+
+  <div class="container border " style="width:100%">
+    <div class="d-flex flex-row">
+      <div class="row m-2">
+
+
+        <h5>Search students</h5>
+
+      </div>
+
+      <input type="text" class="form-control m-2" placeholder="By his last name" aria-label="Username"
+        aria-describedby="basic-addon1" style="height: 100%; width: 16%;" id="searchByName">
+      <button type="button" class="btn btn-dark m-1" id="search1" style="height: 100%; width: 10%;">Search</button>
+
+
+      <input type="text" class="form-control m-2" placeholder="By his first name" aria-label="Username"
+        aria-describedby="basic-addon1" style="height: 100%; width: 16%;" id="searchByLastName">
+      <button type="button" class="btn btn-dark m-1" id="search2" style="height: 100%; width: 10%;">Search</button>
+    </div>
+  </div>
+
+  <!-- aqui termina el area de busqueda -->
+
+  <!-- aqui comienza el area de resultados-->
+
+  <div class="container mt-5 mb-5 d-flex flex-column">
+   
+    <h5>Year:</h5>
+<div class="container d-flex flex-row" >
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1">1</label>
+
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <label class="form-check-label" for="inlineCheckbox2">2</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+      <label class="form-check-label" for="inlineCheckbox3">3 </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+      <label class="form-check-label" for="inlineCheckbox3"> 4 </label>
+    </div>
+  </div>
+    <h5>Group:</h5>
+    <div class="container d-flex flex-row" >
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">1</label>
+  
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">2</label>
+      </div>
+  
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option3">
+        <label class="form-check-label" for="inlineCheckbox3">3 </label>
+      </div>
+     
+      <button type="button" class="btn btn-dark m-1" id="reload" onclick="gradesAverage()"
+      style="height: 100%; width: 10%;">Display Group Grades:</button>
+    </div>
+
+    <div class="container mt-5 mb-5 d-flex flex-column" id="groupAverage">
+
+      Average Grades:
+
+    </div>
+
+  </div>
+
+
+
+  <div class="container mt-5 mb-5 d-flex flex-row">
+
+
+
+    <h4>Search results:</h4>
+    <div class="border" id="searchReturn">
+
+
+
+    </div>
+
+  </div>
+
+  <!-- aqui termina el area de resultados-->
+
+
+
+
+  <!-- aqui comienza el area de altas -->
+
+
+  <div class="container d-flex flex-row border" id="container">
+
+    <div class="card ms-5 me-2" style="width: 30%;">
+      <div class="card-header">
+        Add Student
+      </div>
+
+      <ul class="list-group list-group-flush">
+
+        <li class="list-group-item">
+          <div class="input-group mb-3 mt-3">
+            <span class="input-group-text" id="basic-addon1" style="color:white; background-color:rgb(116,152,192)
+          ">Name:</span>
+            <input type="text" class="form-control" placeholder="User Name" aria-label="Username"
+              aria-describedby="basic-addon1" id="firstName">
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="input-group mb-3 mt-3">
+            <span class="input-group-text" id="basic-addon1" style="color:white; background-color:rgb(116,152,192)
+          ">Last name:</span>
+            <input type="text" class="form-control" placeholder="User Last name" aria-label="Username"
+              aria-describedby="basic-addon1" id="lastName">
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="input-group mb-3 mt-3 ">
+            <span class="input-group-text" id="basic-addon1" style="color:white; background-color:rgb(116,152,192)
+          ">Age: </span>
+            <input type="number" value="17" class="form-control" placeholder="User Last name" id="age"
+              aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+
+        </li>
+
+        <div class="input-group mb-3 mt-3">
+          <input type="text" class="form-control" id="mail" placeholder="Student's username"
+            aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <span class="input-group-text" id="basic-addon2" style="color:white; background-color: rgb(116,152,192)
+        ">@university.com</span>
+        </div>
+        </li>
+
+        <li class="list-group-item">
+          <button type="button" class="btn btn-dark" id="submit" onclick="enrollment()">Add</button>
+          <button type="button" class="btn btn-dark" id="submit" onclick="accept()">Initialization</button>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="col" id="studentCard">
+    </div>
+
+
+  </div>
+  <!--   aqui termina el area de altas  -->
+
+  <div class="card ms-5  mt-5" style="width: 95%;">
+    <div class="card-header" style=" display:flex; flex-direction: row;">
+
+      <a style="width: 23%; text-align: center;" class="nav-link dropdown-toggle m-3" href="#" role="button"
+        aria-expanded="false" onclick="byName()">
+        By name
+      </a>
+      <a style=" width: 10%; " class="nav-link dropdown-toggle m-3" href="#" role="button" aria-expanded="false"
+        onclick="byLastName()">
+        By last name
+      </a>
+      <a style="width: 20%; text-align: center;" class="nav-link dropdown-toggle m-3" href="#" role="button"
+        aria-expanded="false" onclick="byYear()">
+        Year
+      </a>
+      <a style="width: 10%" class="nav-link dropdown-toggle m-3" href="#" role="button" aria-expanded="false"
+        onclick="byGroup()">
+        Group
+      </a>
+      <a style="margin-left:500px" class="nav-link dropdown-toggle m-3" href="#" role="button" aria-expanded="false"
+     >
+      Grades
+    </a>
+      <button  type="button" class="btn btn-dark m-1" id="reload" onclick="location.reload()"
+        style="height: 100%; width: 10%;">Reset</button>
+
+    </div>
+
+    <ul class="list-group list-group-flush" style="list-style: none; " id="studentList">
+
+
+
+    </ul>
+  </div>
+
+
+
+  <script src="./index.js"></script>
+  <script src="./baseDeDatosAlumnos.js"></script>
+</body>
+
+
+</html>
